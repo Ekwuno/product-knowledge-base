@@ -27,9 +27,10 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ product }) {
+export default function Blog({ product }) {
   return (
     <div class="font-sans text-gray-900 h-full">
+        
       <header class="absolute top-0 left-0 w-full py-4">
         <div class="flex items-center justify-between px-8">
           <span class="text-2xl tracking-tighter font-semibold">AppLogo</span>
