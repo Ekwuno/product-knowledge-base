@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css";
 
-const SERVERLESS_FN_URL =
-  "/functions/api/form.js";
+const SERVERLESS_FN_URL = "/api/form";
 
 export default function Form() {
   return (
