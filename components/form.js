@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.css";
 
 const SERVERLESS_FN_URL =
-  "https://airtable-form-handler.obinnacodes.workers.dev/submit";
+  "/functions/api/form.js";
 
 export default function Form() {
   return (
