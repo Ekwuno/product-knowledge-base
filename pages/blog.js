@@ -52,7 +52,7 @@ export default function Blog({ countries }) {
               {country.name}
             </h3>
             <p>
-              {country.code} -> {country.emoji}
+              {country.code} - {country.emoji}
             </p>
           </div>
         ))}
