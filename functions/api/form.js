@@ -3,11 +3,11 @@
  * @param {Request} request
  */
 
-require("dotenv").config();
+// require("dotenv").config();
 
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+const AIRTABLE_BASE_ID = "app2FnujSQjo7sy2s";
+const AIRTABLE_TABLE_NAME = "Form_submissions";
+const AIRTABLE_API_KEY = "key2gIRClmD1Y01aU";
 
 const FORM_URL = "https://product-knowledge-base.pages.dev";
 
@@ -64,12 +64,6 @@ const submitHandler = async (request) => {
   // return Response.redirect(FORM_URL)
 };
 
-async function handleRequest(request) {
-  const url = new URL(request.url);
-
-  if (url.pathname === "/submit") {
-    return submitHandler(request);
-  }
-
-  return new Response.redirect(FORM_URL);
+export async function onRequestPost({ request }) {
+  return await submitHandler(request);
 }
