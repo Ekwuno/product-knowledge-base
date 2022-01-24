@@ -13,23 +13,24 @@ const FORM_URL = "https://product-knowledge-base.pages.dev";
 
 // initialize the Post request that sends the form data
 
-const createAirtableRecord = (body) => {
+const createAirtableRecord = async function onRequest({body,env}){
   return fetch(
-    `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(
-      AIRTABLE_TABLE_NAME
+    `https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${encodeURIComponent(
+      env.AIRTABLE_TABLE_NAME
     )}`,
     {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
-        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        Authorization: `Bearer ${env.AIRTABLE_API_KEY}`,
         "Content-type": `application/json`,
       },
     }
   );
 };
 
-const submitHandler = async (request) => {
+
+const submitHandler = async ({request,env}) => {
   if (request.method !== "POST") {
     return new Response("Method Not Allowed", {
       status: 405,
@@ -60,10 +61,10 @@ const submitHandler = async (request) => {
   //   throw new Error ("check field")
   // }
 
-  return createAirtableRecord(reqBody);
+  return createAirtableRecord({body:reqBody,env:env});
   // return Response.redirect(FORM_URL)
 };
 
-export async function onRequestPost({ request }) {
-  return await submitHandler(request);
+export async function onRequestPost({ request,env }) {
+  return await submitHandler({request,env});
 }

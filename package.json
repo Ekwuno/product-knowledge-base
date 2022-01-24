@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx wrangler pages dev --binding AIRTABLE_BASE_ID=\"app2FnujSQjo7sy2s\" AIRTABLE_TABLE_NAME=\"Form_submissions\"  AIRTABLE_API_KEY=\"key2gIRClmD1Y01aU\" -- npx next dev ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,6 +22,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.15"
+    "tailwindcss": "^2.2.15",
+    "wrangler": "^0.0.0-18f8f65"
   }
 }
