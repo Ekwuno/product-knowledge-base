@@ -1,0 +1,12 @@
+name: schedule-pages-deploy
+on: 
+  schedule:
+    - cron: '*/2 * * * *'
+job: 
+  build: 
+    name: schedule-pages-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl request
+        run: curl -X POST -d {} https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/c3c5cc0d-6606-480e-96f9-f79ebcbf062d
+
