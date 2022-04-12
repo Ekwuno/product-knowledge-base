@@ -1,8 +1,8 @@
 name: schedule-pages-deploy
 on: 
   schedule:
-    - cron: '*/2 * * * *'
-job: 
+    - cron: '*/5 * * * *'
+jobs: 
   build: 
     name: schedule-pages-deploy
     runs-on: ubuntu-latest
