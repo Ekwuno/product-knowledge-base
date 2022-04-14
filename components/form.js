@@ -61,7 +61,7 @@ export default function Form() {
             htmlFor="email"
             className="block text-sm font-medium text-warm-gray-900"
           >
-            Email
+            Emailss
           </label>
           <div className="mt-1">
             <input
